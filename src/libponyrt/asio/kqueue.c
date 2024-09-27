@@ -16,7 +16,7 @@
 #include <stdio.h>
 #include <signal.h>
 
-#if defined(PLATFORM_IS_DRAGONFLY)
+#if defined(PLATFORM_IS_DRAGONFLY) || defined(PLATFORM_IS_FREEBSD)
 typedef u_short kevent_flag_t;
 #else
 typedef uint32_t kevent_flag_t;

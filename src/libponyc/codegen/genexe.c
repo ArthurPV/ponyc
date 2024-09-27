@@ -353,7 +353,7 @@ static bool link_exe(compile_t* c, ast_t* program,
   const char* fuseld = strlen(fuseldcmd) ? "-fuse-ld=" : "";
   const char* ldl = target_is_linux(c->opt->triple) ? "-ldl" : "";
   const char* atomic =
-    (target_is_linux(c->opt->triple) || target_is_dragonfly(c->opt->triple))
+    (target_is_linux(c->opt->triple) || target_is_dragonfly(c->opt->triple) || target_is_freebsd(c->opt->triple))
     ? "-latomic" : "";
   const char* staticbin = c->opt->staticbin ? "-static" : "";
   const char* dtrace_args =

@@ -274,6 +274,10 @@ if(${CMAKE_HOST_SYSTEM_NAME} MATCHES "DragonFly")
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -isystem /usr/local/cxx_atomics")
 endif()
 
+if(${CMAKE_HOST_SYSTEM_NAME} MATCHES "FreeBSD")
+    set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -latomic")
+endif()
+
 set(CMAKE_STATIC_LIBRARY_PREFIX "")
 
 if (PONY_CROSS_LIBPONYRT)
